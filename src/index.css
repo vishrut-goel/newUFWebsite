@@ -1,0 +1,154 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@config "../tailwind.config.js";
+
+/* Warm Editorial Design Tokens — Uttam Foundries & Ispat */
+:root {
+  --surface: #FAFAF7;
+  --surface-raised: #FFFFFF;
+  --surface-subtle: #F3F0EB;
+  --border: #E8E4DF;
+  --text-primary: #2D2D2D;
+  --text-secondary: #6B6560;
+  --accent: #9B6B4A;
+  --accent-light: #C49A7C;
+  --accent-bg: #F5EDE5;
+  --success: #5A8A6C;
+  --font-heading: 'Abel', sans-serif;
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+@theme {
+  --color-brand-50: #F5EDE5;
+  --color-brand-100: #EDE3D9;
+  --color-brand-200: #DCBAA1;
+  --color-brand-300: #C49A7C;
+  --color-brand-400: #B0805F;
+  --color-brand-500: #9B6B4A;
+  --color-brand-600: #83573A;
+  --color-brand-700: #6A442C;
+
+  --color-surface: #FAFAF7;
+  --color-surface-raised: #FFFFFF;
+  --color-surface-subtle: #F3F0EB;
+  --color-border-warm: #E8E4DF;
+
+  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Abel', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+  background-color: var(--surface);
+}
+
+body {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--surface);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Abel', sans-serif;
+  color: var(--text-primary);
+  letter-spacing: 0.04em;
+  font-weight: 400;
+}
+
+/* Monospace Override for Specs & Technical Data */
+.font-mono, code, pre {
+  font-family: 'JetBrains Mono', monospace !important;
+}
+
+/* Focus State Styling */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  transition: outline-offset 0.15s ease;
+}
+
+/* Subtle Warm Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface-subtle);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D9D3CB;
+  border-radius: 4px;
+  border: 2px solid var(--surface-subtle);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-light);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #D9D3CB var(--surface-subtle);
+}
+
+/* Utility Classes */
+.text-accent {
+  color: var(--accent);
+}
+
+.bg-section-alt {
+  background-color: var(--surface-subtle);
+}
+
+/* Minimal Tactile Badge */
+.placeholder-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.625rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+  background-color: var(--accent-bg);
+  color: var(--accent);
+  border: 1px solid rgba(155, 107, 74, 0.25);
+}
+
+/* Tactile Surface Cards (Warm, grounded, non-glassmorphic) */
+.card-tactile {
+  background-color: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03), 0 1px 2px -1px rgba(0, 0, 0, 0.02);
+}
+
+/* Fallback mappings for clean migration away from legacy classes */
+.glass-panel {
+  background-color: var(--surface-raised);
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03);
+}
+
+.glass-panel-hover {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.glass-panel-hover:hover {
+  border-color: var(--accent-light);
+  box-shadow: 0 4px 12px -2px rgba(155, 107, 74, 0.08);
+  transform: translateY(-1px);
+}
+
+.glass-card-amber {
+  background-color: var(--surface-subtle);
+  border: 1px solid var(--border);
+}
